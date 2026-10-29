@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="CityFiberTool/CityFiberTool.vcxproj" Id="b112fe4f-7ee8-4495-9606-79c237588ab3" />
+</Solution>
