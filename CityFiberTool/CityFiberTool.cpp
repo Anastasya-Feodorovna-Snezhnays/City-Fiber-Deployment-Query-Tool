@@ -27,7 +27,7 @@ DoublyLinkedList::~DoublyLinkedList() {
 
 //尾插法插入城市节点
 void DoublyLinkedList::insertCity(city c) {
-	cityNode* newNode = newNode;
+	cityNode* newNode = new cityNode;
 	newNode->data = c;
 	cityNode* tail = head->prev;
 	tail->next = newNode;
@@ -129,4 +129,43 @@ void DoublyLinkedList::sortByDistance() {
 		}
 	}
 	cout << "排序完成！" << endl;
+}
+
+//将链表中的城市数据导出到数组中
+void DoublyLinkedList::exportToArray(city* arr) {
+	cityNode* cur = head->next; 
+	int i = 0;                 
+	while (cur != head) {
+		arr[i] = cur->data;     
+		i++;                    
+		cur = cur->next;        
+	}
+}
+
+
+
+//test:
+int main1() {
+	
+
+	DoublyLinkedList myList;
+	myList.loadFromFile("cities.txt");
+
+	cout << "\n--- 初始状态 ---" << endl;
+	myList.printList();
+
+	cout << "\n--- 测试删除（删掉上海） ---" << endl;
+	if (myList.deleteCity("上海")) {
+		cout << "上海已成功删除！" << endl;
+	}
+	else {
+		cout << "没找到上海！" << endl;
+	}
+	myList.printList();
+
+	cout << "\n--- 测试按距离排序 ---" << endl;
+	myList.sortByDistance();
+	myList.printList();
+
+	return 0;
 }

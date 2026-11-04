@@ -140,10 +140,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CityFiberTool.cpp" />
+    <ClCompile Include="Graph.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CityFiberTool.h" />
+    <ClInclude Include="Graph.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="cities.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
